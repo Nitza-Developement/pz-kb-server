@@ -1,0 +1,34 @@
+{
+  "//": "BigCommerce Sync Credentials",
+  "bc_base_url_payments": "https://payments.bigcommerce.com/stores/{store_hash}/v2",
+  "bc_base_url_v2": "https://api.bigcommerce.com/stores/{store_hash}/v2",
+  "bc_base_url_v3": "https://api.bigcommerce.com/stores/{store_hash}/v3/",
+
+  "//": "Orders url's",
+  "bc_get_orders": "https://api.bigcommerce.com/stores/{store_hash}/v2/orders",
+  "bc_get_order": "https://api.bigcommerce.com/stores/{store_hash}/v2/orders/{order_id}",
+  "bc_get_order_line_items": "https://api.bigcommerce.com/stores/{store_hash}/v2/orders/{order_id}/products",
+  "bc_get_order_metafields": "https://api.bigcommerce.com/stores/{store_hash}/v3/orders/{order_id}/metafields",
+  "bc_get_order_shipping_address": "https://api.bigcommerce.com/stores/{store_hash}/v2/orders/{order_id}/shipping_addresses",
+
+  "//": "Customer url's",
+  "bc_get_customers": "https://api.bigcommerce.com/stores/{store_hash}/v3/customers",
+  "bc_get_particular_customer": "https://api.bigcommerce.com/stores/{store_hash}/v2/customers/{customer_id}",
+  "bc_get_customer_address": "https://api.bigcommerce.com/stores/{store_hash}/v2/customers/{customer_id}/addresses",
+
+  "//": "Customer_group url's",
+  "bc_get_customer_groups": "https://api.bigcommerce.com/stores/{store_hash}/v2/customer_groups",
+  "bc_add_customer": "https://api.bigcommerce.com/stores/{store_hash}/v3/customers",
+
+  "//": "Fetch product brand details url's",
+  "bc_get_product_brands": "https://api.bigcommerce.com/stores/{store_hash}/v3/catalog/brands",
+  "bc_get_product_categories": "https://api.bigcommerce.com/stores/{store_hash}/v3/catalog/categories",
+  "bc_get_particular_category": "https://api.bigcommerce.com/stores/{store_hash}/v3/catalog/categories/{category_id}",
+  "bc_get_products": "https://api.bigcommerce.com/stores/{store_hash}/v3/catalog/products",
+  "bc_get_particular_product": "https://api.bigcommerce.com/stores/{store_hash}/v3/catalog/products/{product_id}",
+  "bc_get_custom_field": "https://api.bigcommerce.com/stores/{store_hash}/v3/catalog/products/{product_id}/custom-fields",
+  "bc_get_product_image": "https://api.bigcommerce.com/stores/{store_hash}/v3/catalog/products/{product_id}/images",
+  "bc_get_product_options": "https://api.bigcommerce.com/stores/{store_hash}/v3/catalog/products/{product_id}/options",
+
+  "bc_fetch_product_category": "https://api.bigcommerce.com/stores/{store_hash}/v3/catalog/products/category-assignments?product_id:in="
+}
