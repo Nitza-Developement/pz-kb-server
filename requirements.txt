@@ -1,0 +1,7 @@
+bigcommerce==0.23.4
+braintree==4.30.0
+flasgger==0.9.7.1
+flask-swagger-ui==4.11.1
+Flask==3.0.3
+python-dotenv==1.0.1
+requests==2.32.3
