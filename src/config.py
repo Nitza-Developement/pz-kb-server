@@ -2,6 +2,7 @@
 import os
 from collections import UserDict
 from dotenv import load_dotenv
+from flask_cors import CORS
 load_dotenv()
 
 class EnvDict(UserDict):
@@ -26,6 +27,13 @@ __env = EnvDict({
     "PORT" : os.getenv("FLASK_PORT", "5000").lower() in ("true", "1"),
     "SECRET_KEY" : os.getenv("SECRET_KEY"),
     "ENV" : os.getenv("FLASK_ENV", "development"),
+
+    "CORS_ORIGINS": "*",
+    "CORS_ALLOW_HEADERS": ["Authorization", "Content-Type"],
+    "CORS_EXPOSE_HEADERS": ["Authorization"],
+    "CORS_SUPPORTS_CREDENTIALS": True,
+    "CORS_METHODS": ["GET", "POST", "OPTIONS"],
+
 
     # ROUTER
     "ROUTER_DIR" : "router",
@@ -76,6 +84,21 @@ __env = EnvDict({
     "PP_BT_PRIVATE_KEY" : os.getenv("PP_BT_PRIVATE_KEY"),
 })
 
+
+def configure_cors(app):
+    """
+    Ensure all responses have the CORS headers. This ensures any failures are also accessible by the client.
+
+    Args:
+        app (Flask): The Flask application instance.
+    """
+    CORS(app, resources={r"/*": {
+        "origins": __env["CORS_ORIGINS"],
+        "allow_headers": __env["CORS_ALLOW_HEADERS"],
+        "expose_headers": __env["CORS_EXPOSE_HEADERS"],
+        "supports_credentials": __env["CORS_SUPPORTS_CREDENTIALS"],
+        "methods": __env["CORS_METHODS"],
+    }})
 
 def configure_app(app):
     """

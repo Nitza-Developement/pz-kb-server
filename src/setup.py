@@ -1,5 +1,5 @@
 from flask import Flask
-from src.config import configure_app
+from src.config import configure_app, configure_cors
 from src.blueprints import register_blueprints
 from src.swagger import configure_swagger
 
@@ -15,6 +15,9 @@ def create_app():
 
     # Configure the app
     configure_app(app)
+    
+    # Configure the CORS
+    configure_cors(app)
 
     # Register Blueprints
     register_blueprints(app)
