@@ -30,9 +30,12 @@ def __find_routes_files(app):
     router_dir = app.config["ROUTER_DIR"]
     routes_files = app.config["ROUTES_FILES"]
     routes_files_between = app.config["ROUTES_FILES_BETWEEN"]
+    routes_files_ignore = app.config["ROUTES_FILES_IGNORE"]
 
     for root, _, files in os.walk(os.path.join(os.path.dirname(__file__), router_dir)):
         for file in files:
+            if file in routes_files_ignore:
+                continue
             if file in routes_files or any(
                 file.startswith(prefix) and file.endswith(suffix)
                 for prefix, suffix in routes_files_between

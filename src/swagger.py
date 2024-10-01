@@ -53,6 +53,7 @@ def configure_swagger(app):
         #     }
         # }
     }
-
+    if swagger_ui:
+        print(f"Running swagger on {host}{swagger_specs_route}")
     swagger = Swagger(app, config=swagger_config, template=swagger_template)
     return swagger
