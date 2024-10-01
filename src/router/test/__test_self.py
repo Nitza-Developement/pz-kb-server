@@ -1,5 +1,6 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, request, jsonify
 from src.blueprints import __bp_name__
+# import modules, actions, services here ...
 
 bp = Blueprint(__bp_name__(), __name__, url_prefix="/test")
 
@@ -21,4 +22,5 @@ def test_self():
               type: string
               example: "Hello from this server"
     """
+    # test your function here ...
     return jsonify({"message": "Hello from this server"}), 200
