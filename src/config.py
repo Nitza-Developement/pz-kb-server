@@ -91,10 +91,10 @@ __env = EnvDict({
     "BC_CUSTOMER_GROUP_ID" : 0,  # TODO definir los ids para cada tipo (único campo encontrado para separar las clases)
 
     # BRAINTREE
-    "PP_BT_ENVIRONMENT" : os.getenv("PP_BT_ENVIRONMENT"),
-    "PP_BT_MERCHANT_ID" : os.getenv("PP_BT_MERCHANT_ID"),
-    "PP_BT_PUBLIC_KEY" : os.getenv("PP_BT_PUBLIC_KEY"),
-    "PP_BT_PRIVATE_KEY" : os.getenv("PP_BT_PRIVATE_KEY"),
+    "PPB_ENVIRONMENT" : os.getenv("PPB_ENVIRONMENT"),
+    "PPB_MERCHANT_ID" : os.getenv("PPB_MERCHANT_ID"),
+    "PPB_PUBLIC_KEY" : os.getenv("PPB_PUBLIC_KEY"),
+    "PPB_PRIVATE_KEY" : os.getenv("PPB_PRIVATE_KEY"),
 })
 
 
