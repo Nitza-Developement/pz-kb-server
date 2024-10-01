@@ -60,6 +60,15 @@ __env = EnvDict({
     "SWAGGER_ROUTE" : "/apispec.json",
     "SWAGGER_STATIC_URL_PATH" : "/flasgger_static",
 
+    # KILLBILL
+    "KB_TENANT" : os.getenv("KB_TENANT"),
+    "KB_USERNAME" : os.getenv("KB_USERNAME"),
+    "KB_PASSWORD" : os.getenv("KB_PASSWORD"),
+    "KB_API_URL" : os.getenv("KB_API_URL", "localhost:8080"),
+    "KB_TIMEOUT" : 30,
+    "KB_API_KEY" : os.getenv("KB_API_KEY"),
+    "KB_API_SECRET" : os.getenv("KB_API_SECRET"),
+
     # BIGCOMMERCE
     "BC_PAGINATION_DEFAULT_LIMIT" : 50,
     "BC_PAGINATION_DEFAULT_PAGE" : 1,
