@@ -5,5 +5,5 @@ flask-swagger-ui==4.11.1
 Flask==3.0.3
 Flask-Cors==5.0.0
 python-dotenv==1.0.1
-python-killbill-client==0.1.7
+python-killbill-client==0.1.9
 requests==2.32.3
