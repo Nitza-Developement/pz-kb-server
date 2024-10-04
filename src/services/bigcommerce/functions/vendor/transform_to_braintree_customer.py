@@ -27,8 +27,8 @@ def transform_to_braintree_customer(bigcommerce_customer_id):
         "fax" : bc_customer.get("", ),
         "phone" : bc_customer.get("phone", ""),
         "company" : bc_customer.get("company", ""),
-        "payment_methods": __get_credit_cards_payments_methods(bc_customer_stored_instruments),
-        "credit_cards" : __get_credit_cards_payments_methods(bc_customer_stored_instruments),
+        "payment_methods": __get_payment_methods_methods(bc_customer_stored_instruments),
+        "credit_cards" : __get_credit_cards_methods(bc_customer_stored_instruments),
         "addresses": __get_addresses(bc_customer_addresses),
     }
     return braintree_customer_request
@@ -44,12 +44,12 @@ def __get_addresses(bc_customer_addresses):
     Returns:
         list or dict: A list of formatted addresses or a single formatted address dictionary for Braintree.
     """
+    import country_converter as coco
+    cc = coco.CountryConverter()
 
     def process_address(add):
-        import country_converter as coco
-        cc = coco.CountryConverter()
 
-        country_short_name = add.get("country_code", "")
+        country_short_name = add.get("country", "")
         country_code_alpha2 = add.get("country_code", "")
         country_oficial_name = ""
         country_code_alpha3 = ""
@@ -84,7 +84,20 @@ def __get_addresses(bc_customer_addresses):
 
 
 
-def __get_credit_cards_payments_methods(bc_customer_stored_instruments):
+
+def __get_payment_methods_methods(bc_customer_stored_instruments):
+    """
+    Extracts and processes stored payments methods instruments from BigCommerce for Braintree.
+
+    Args:
+        bc_customer_stored_instruments (list): A list of stored payments methods instruments for a BigCommerce customer.
+
+    Returns:
+        list: A list of dictionaries representing each payments methods for Braintree.
+    """
+    return __get_credit_cards_methods(bc_customer_stored_instruments)
+
+def __get_credit_cards_methods(bc_customer_stored_instruments):
     """
     Extracts and processes stored credit card instruments from BigCommerce for Braintree.
 
