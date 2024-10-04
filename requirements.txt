@@ -1,5 +1,6 @@
 bigcommerce==0.23.4
 braintree==4.30.0
+country-converter==1.2
 flasgger==0.9.7.1
 flask-swagger-ui==4.11.1
 Flask==3.0.3
