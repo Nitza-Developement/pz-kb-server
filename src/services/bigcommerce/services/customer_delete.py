@@ -8,4 +8,4 @@ def delete(customer_id: int):
     :param id: ID of the customer.
     :return: Response from the DELETE request.
     """
-    raise NotImplementedError("The 'all' method is not implemented yet.")
+    raise NotImplementedError("This method is not implemented yet.")

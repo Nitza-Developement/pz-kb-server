@@ -2,7 +2,6 @@ from ..config import api_v3 as client
 
 
 def filter(
-    store_hash: str = None,
     id_in: list = None,
     company_in: list = None,
     customer_group_id_in: list = None,
@@ -24,7 +23,6 @@ def filter(
     """
     Filter customers based on specific criteria.
 
-    :param store_hash: Store hash to identify the store.
     :param id_in: List of customer IDs to filter by.
     :param company_in: List of companies to filter by.
     :param customer_group_id_in: List of customer group IDs to filter by.
@@ -45,7 +43,7 @@ def filter(
     :param limit: Number of items per page (default: 50).
     :return: Response from the custom GET filtered request.
     """
-    from .customer_fetch import __get
+    from .__get import __get
 
     params = []
     if id_in and isinstance(id_in, list):
@@ -83,4 +81,4 @@ def filter(
     if sort:
         params.append(f"sort={sort}")
 
-    return __get(page=page, limit=limit, sort=sort, params=params)
+    return __get(url="/customers", page=page, limit=limit, sort=sort, params=params)
