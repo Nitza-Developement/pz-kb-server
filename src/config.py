@@ -25,7 +25,7 @@ __env = EnvDict({
     "DEBUG" : os.getenv("FLASK_DEBUG", "False").lower() in ("true", "1"),
     "HOST" : os.getenv("FLASK_HOST", "0.0.0.0"),
     "PORT" : os.getenv("FLASK_PORT", "5000"),
-    "SERVER" : f"{os.getenv('FLASK_HOST', '0.0.0.0')}:{os.getenv('FLASK_PORT', '5000')}",
+    "SERVER" : f"{os.getenv('FLASK_PROTOCOL', 'http')}://{os.getenv('FLASK_HOST', '0.0.0.0')}:{os.getenv('FLASK_PORT', '5000')}",
     "SECRET_KEY" : os.getenv("SECRET_KEY"),
     "ENV" : os.getenv("FLASK_ENV", "development"),
 
