@@ -1,6 +1,29 @@
-from ..config import api_v3 as client
+from ..config import api_v3, api_v2
 
-def __get(url="", sort=None, page=None, limit=None, params=None):
+
+def __get_v2(url="", sort=None, page=None, limit=None, params=None):
+    return __get(
+        client=api_v2,
+        url=url,
+        sort=sort,
+        page=page,
+        limit=limit,
+        params=params,
+    )
+
+
+def __get_v3(url="", sort=None, page=None, limit=None, params=None):
+    return __get(
+        client=api_v3,
+        url=url,
+        sort=sort,
+        page=page,
+        limit=limit,
+        params=params,
+    )
+
+
+def __get(client, url="", sort=None, page=None, limit=None, params=None):
     """
     Perform a GET request to the base URL with pagination parameters.
 
@@ -21,7 +44,6 @@ def __get(url="", sort=None, page=None, limit=None, params=None):
 
     query_string = "&".join(params) if params else ""
     # query_string += f"&sort={sort}" if sort else ""
-
     if query_string:
         query_string += f"&page={page}&limit={limit}"
         return client.get(f"{url}?{query_string}")

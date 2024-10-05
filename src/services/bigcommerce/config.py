@@ -32,6 +32,10 @@ client_GQL = bigcommerce.connection.GraphQLConnection(**const_OAuth)
 client_BAuth = bigcommerce.api.BigcommerceApi(**const_BAuth)
 client_PAuth = bigcommerce.api.BigcommerceApi(**const_BPAuth)
 client_OAuth = bigcommerce.api.BigcommerceApi(**const_OAuth)
+v2client_OAuth = bigcommerce.connection.OAuthConnection(
+    **const_OAuth,
+    api_path="/stores/{}/v2/{}",
+)
 v3client_OAuth = bigcommerce.connection.OAuthConnection(
     **const_OAuth,
     api_path="/stores/{}/v3/{}",
@@ -42,6 +46,7 @@ BC_ENDPOINTS_FILE_PATH = "src/services/bigcommerce/endpoints.json"
 # Instances of Bigcommerce's clients for direct use
 api_vraw_basic = client_BAuth
 api_vraw_payment = client_PAuth
-api_v2 = client_OAuth
+api = client_OAuth
+api_v2 = v2client_OAuth
 api_v3 = v3client_OAuth
 api_gql = client_GQL

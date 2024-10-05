@@ -1,5 +1,5 @@
 from ..config import api_v3 as client
-from .__get import __get
+from .__get import  __get_v3 as __get
 
 def get_all(sort=None, page=None, limit=None):
     """

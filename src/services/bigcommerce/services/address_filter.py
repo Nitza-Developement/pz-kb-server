@@ -26,7 +26,7 @@ def filter(
     :param limit: Number of items per page (default: 50).
     :return: Response from the custom GET filtered request.
     """
-    from .__get import __get
+    from .__get import  __get_v3 as __get
 
     params = []
     if id_in and isinstance(id_in, list):
