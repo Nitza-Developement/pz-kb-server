@@ -1,2 +1,5 @@
-def handle_subscription_change (event_data):
-    print("Handling subscription change :", event_data)
+def handle_subscription_change(event: object):
+    """ """
+    data = event.get_json()
+    print(">>> Handling subscription change notification...")
+    print("with data : ", data)  # use to debug (comment when done)

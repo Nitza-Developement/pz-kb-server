@@ -1,2 +1,5 @@
-def handle_subscription_uncancel (event_data):
-    print("Handling subscription uncancel :", event_data)
+def handle_subscription_uncancel(event: object):
+    """ """
+    data = event.get_json()
+    print(">>> Handling subscription uncancel notification...")
+    print("with data : ", data)  # use to debug (comment when done)

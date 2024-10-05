@@ -1,2 +1,5 @@
-def handle_invoice_notification (event_data):
-    print("Handling invoice notification :", event_data)
+def handle_invoice_notification(event: object):
+    """ """
+    data = event.get_json()
+    print(">>> Handling invoice notification notification...")
+    print("with data : ", data)  # use to debug (comment when done)

@@ -1,2 +1,5 @@
-def handle_subscription_creation (event_data):
-    print("Handling subscription creation :", event_data)
+def handle_subscription_creation(event: object):
+    """ """
+    data = event.get_json()
+    print(">>> Handling subscription creation notification...")
+    print("with data : ", data)  # use to debug (comment when done)

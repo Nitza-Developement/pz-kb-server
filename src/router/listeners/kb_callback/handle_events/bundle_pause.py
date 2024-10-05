@@ -1,2 +1,5 @@
-def handle_bundle_pause (event_data):
-    print("Handling bundle pause :", event_data)
+def handle_bundle_pause(event: object):
+    """ """
+    data = event.get_json()
+    print(">>> Handling bundle pause notification...")
+    print("with data : ", data)  # use to debug (comment when done)

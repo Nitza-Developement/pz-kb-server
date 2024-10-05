@@ -1,2 +1,5 @@
-def handle_broadcast_service (event_data):
-    print("Handling broadcast service :", event_data)
+def handle_broadcast_service(event: object):
+    """ """
+    data = event.get_json()
+    print(">>> Handling broadcast service notification...")
+    print("with data : ", data)  # use to debug (comment when done)

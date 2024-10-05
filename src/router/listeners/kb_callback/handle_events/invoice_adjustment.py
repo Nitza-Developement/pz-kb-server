@@ -1,2 +1,5 @@
-def handle_invoice_adjustment (event_data):
-    print("Handling invoice adjustment :", event_data)
+def handle_invoice_adjustment(event: object):
+    """ """
+    data = event.get_json()
+    print(">>> Handling invoice adjustment notification...")
+    print("with data : ", data)  # use to debug (comment when done)
